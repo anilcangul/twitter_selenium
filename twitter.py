@@ -30,8 +30,8 @@ class giris_yap():
         giris_butonu = driver.find_element_by_xpath("//*[@id='react-root']/div/div/div[2]/main/div/div/div[1]/form/div/div[3]/div/div")
         giris_butonu.click()
         time.sleep(2)
-        giris_url = driver.current_url
-        assert "https://twitter.com/home" in driver.current_url, "Giriş yapılamadı Link: {} ".format(giris_url)
+        giris_url = driver.current_url #ana sayfada sayfa urlsini alıyoruz, giriş yaptığımızı anlayabilmek için
+        assert "https://twitter.com/home" in driver.current_url, "Giriş yapılamadı Link: {} ".format(giris_url) #mevcut sayfa urlsini karşılaştırıyoruz /giriş yapılamazsa assert fırlatıyor.
 
 G1 = giris_yap(usurname=userinfo,password=userinfo) #Giriş için userinfo dosyasındaki kullanıcı bilgilerini çekip obje yarrattık.
 G1.giris()
