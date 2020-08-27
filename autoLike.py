@@ -4,13 +4,14 @@ import userinfo
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 
-driver = webdriver.Chrome()
+path = ".\chromeDriver\chromedriver.exe"  #chromeDriverın dosyadaki adresi
+driver = webdriver.Chrome(path)
 driver.get("https://twitter.com/login")
 
 wait = WebDriverWait(driver, 600)
 driver.maximize_window()
 
-time.sleep(2)
+time.sleep(2) #2saniye bekletme
 
 class giris_yap():
     def __init__(self,usurname,password):
